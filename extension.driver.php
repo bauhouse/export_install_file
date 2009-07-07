@@ -178,7 +178,7 @@
 				$span->appendChild(new XMLElement('p', '<strong>Warning: It appears you do not have the "ZipArchive" class available. Ensure that PHP was compiled with <code>--enable-zip</code>'));
 			}
 			else{
-				$span->appendChild(new XMLElement('button', 'Create', array('name' => 'action[export]', 'type' => 'submit')));	
+				$span->appendChild(new XMLElement('button', 'Create Install File', array('name' => 'action[export]', 'type' => 'submit')));	
 			}
 			
 			$div->appendChild($span);

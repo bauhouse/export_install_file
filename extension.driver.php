@@ -1,14 +1,14 @@
 <?php
 
-	Class extension_export_ensemble extends Extension{
+	Class extension_export_install_file extends Extension{
 
 		public function about(){
-			return array('name' => 'Export Ensemble',
-						 'version' => '1.5',
-						 'release-date' => '2009-03-06',
-						 'author' => array('name' => 'Alistair Kearney',
-										   'website' => 'http://pointybeard.com',
-										   'email' => 'alistair@pointybeard.com')
+			return array('name' => 'Export Install File',
+						 'version' => '1.0',
+						 'release-date' => '2009-07-07',
+						 'author' => array('name' => 'Stephen Bau',
+										   'website' => 'http://www.domain7.com/',
+										   'email' => 'stephen@domain7.com')
 				 		);
 		}
 		
@@ -26,7 +26,7 @@
 		public function install(){
 			
 			if(!class_exists('ZipArchive')){
-				Administration::instance()->Page->pageAlert(__('Export Ensemble cannot be installed, since the "<a href="http://php.net/manual/en/book.zip.php">ZipArchive</a>" class is not available. Ensure that PHP was compiled with the <code>--enable-zip</code> flag.'), AdministrationPage::PAGE_ALERT_ERROR);
+				Administration::instance()->Page->pageAlert(__('Export Install File cannot be installed, since the "<a href="http://php.net/manual/en/book.zip.php">ZipArchive</a>" class is not available. Ensure that PHP was compiled with the <code>--enable-zip</code> flag.'), AdministrationPage::PAGE_ALERT_ERROR);
 				return false;
 			}
 			
@@ -135,32 +135,23 @@
 			);
 			
 			$archive = new ZipArchive;
-			$res = $archive->open(TMP . '/ensemble.tmp.zip', ZipArchive::CREATE);
+			$res = $archive->open(TMP . '/install.tmp.zip', ZipArchive::CREATE);
 			
 			if ($res === TRUE) {
 				
 				$archive->addFromString('install.php', $install_template);
-				$archive->addFile(DOCROOT . '/index.php', 'index.php');
 				
-				if(is_file(DOCROOT . '/README')) $archive->addFile(DOCROOT . '/README', 'README');
-				if(is_file(DOCROOT . '/LICENCE')) $archive->addFile(DOCROOT . '/LICENCE', 'LICENCE');
-				if(is_file(DOCROOT . '/update.php')) $archive->addFile(DOCROOT . '/update.php', 'update.php');
-				
-				$this->__addFolderToArchive($archive, EXTENSIONS, DOCROOT);
-				$this->__addFolderToArchive($archive, SYMPHONY, DOCROOT);
-				$this->__addFolderToArchive($archive, WORKSPACE, DOCROOT);				
-		
 			}
 			
 			$archive->close();
 
 			header('Content-type: application/octet-stream');	
 			header('Expires: ' . gmdate('D, d M Y H:i:s') . ' GMT');
-		    header('Content-disposition: attachment; filename='.Lang::createFilename($this->_Parent->Configuration->get('sitename', 'general')).'-ensemble.zip');
+		    header('Content-disposition: attachment; filename='.Lang::createFilename($this->_Parent->Configuration->get('sitename', 'general')).'-install.zip');
 		    header('Pragma: no-cache');
 		
-			readfile(TMP . '/ensemble.tmp.zip');
-			unlink(TMP . '/ensemble.tmp.zip');
+			readfile(TMP . '/install.tmp.zip');
+			unlink(TMP . '/install.tmp.zip');
 			exit();
 			
 		}
@@ -177,7 +168,7 @@
 			
 			$group = new XMLElement('fieldset');
 			$group->setAttribute('class', 'settings');
-			$group->appendChild(new XMLElement('legend', 'Export Ensemble'));			
+			$group->appendChild(new XMLElement('legend', 'Export Install File'));			
 			
 
 			$div = new XMLElement('div', NULL, array('id' => 'file-actions', 'class' => 'label'));			
@@ -192,7 +183,7 @@
 			
 			$div->appendChild($span);
 
-			$div->appendChild(new XMLElement('p', 'Packages entire site as a <code>.zip</code> archive for download.', array('class' => 'help')));	
+			$div->appendChild(new XMLElement('p', 'Packages install.php file as a <code>.zip</code> archive for download.', array('class' => 'help')));	
 
 			$group->appendChild($div);						
 			$context['wrapper']->appendChild($group);

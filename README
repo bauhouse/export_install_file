@@ -1,3 +1,21 @@
+Export Install File
+------------------------------------
+
+Version: 1.0
+Author: Stephen Bau (stephen@domain7.com)
+Build Date: 7 Jul 2009
+Requirements: Latest Symphony 2 build, ZIP enabled (--enable-zip)
+
+This is a modified version of Alistair Kearney's Export Ensemble. The intention of this extension is to provide 
+a means of maintaining a Git repository of a Symphony ensemble by exporting the install file and including the
+updated install file with every commit. Theoretically it is possible to checkout any commit in the repository and
+be able to recreate the state of the database at the time of the commit.
+
+All credit to creating the extension goes to Alistair Kearney. I simply deleted a few lines to prevent the rest
+of the ensemble files from being saved to the ZIP archive.
+
+
+
 Export Ensemble
 ------------------------------------
 

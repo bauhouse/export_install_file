@@ -6,7 +6,7 @@
 - Requirements: Symphony 2.0.4, ZIP enabled (--enable-zip)
 
 This is a modified version of Alistair Kearney's Export Ensemble. The intention of this extension is to provide 
-a means of maintaining a Git repository of a Symphony ensemble by exporting the install file and including the
+a means of maintaining a Git repository of a Symphony ensemble by exporting the `workspace/install.sql` file and including the
 updated install file with every commit. Theoretically it is possible to checkout any commit in the repository and
 be able to recreate the state of the database at the time of the commit.
 

@@ -38,7 +38,7 @@ Currently this extension adds a "Create" button to the preferences page. In the 
 interface with options for including additional files and folders as well as excluding and other options.
 
 
-[INSTALLATION]
+### Installation
 
 ** Note: The latest version can alway be grabbed with "git clone git://github.com/pointybeard/export_ensemble.git"
 
@@ -47,7 +47,9 @@ interface with options for including additional files and folders as well as exc
 2. Enable it by selecting the "Export Ensemble", choose Enable from the with-selected menu, then click Apply.
 
 
-[CHANGE LOG]
+### Change Log
+
+1.6 - Creates separate SQL files. install.sql and workspace/install.sql
 
 1.5 - README and LICENCE are correctly added to the archives
 

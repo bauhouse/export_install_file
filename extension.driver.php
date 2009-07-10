@@ -4,8 +4,8 @@
 
 		public function about(){
 			return array('name' => 'Export Install File',
-						 'version' => '1.0',
-						 'release-date' => '2009-07-07',
+						 'version' => '1.1',
+						 'release-date' => '2009-07-10',
 						 'author' => array('name' => 'Stephen Bau',
 										   'website' => 'http://www.domain7.com/',
 										   'email' => 'stephen@domain7.com')
@@ -139,7 +139,7 @@
 			
 			if ($res === TRUE) {
 				
-				$archive->addFromString('install.php', $install_template);
+				$archive->addFromString('workspace/install.sql', $sql_data);
 				
 			}
 			
@@ -183,7 +183,7 @@
 			
 			$div->appendChild($span);
 
-			$div->appendChild(new XMLElement('p', 'Packages install.php file as a <code>.zip</code> archive for download.', array('class' => 'help')));	
+			$div->appendChild(new XMLElement('p', 'Packages workspace/install.sql file as a <code>.zip</code> archive for download.', array('class' => 'help')));	
 
 			$group->appendChild($div);						
 			$context['wrapper']->appendChild($group);

@@ -60,12 +60,16 @@
 				'tbl_extensions',
 				'tbl_extensions_delegates',
 				'tbl_fields',
-				'tbl_fields_%',			
+				'tbl_fields_%',
 				'tbl_forgotpass',
 				'tbl_pages',
 				'tbl_pages_types',
 				'tbl_sections',
-				'tbl_sections_association'			
+				'tbl_sections_association',
+				'tbl_members_login_tokens',
+				'tbl_members_roles',
+				'tbl_members_roles_event_permissions',
+				'tbl_members_roles_page_permissions'
 			);
 			
 			## Grab the schema
@@ -78,12 +82,16 @@
 				'tbl_entries',
 				'tbl_extensions',
 				'tbl_extensions_delegates',
-				'tbl_fields',			
+				'tbl_fields',
 				'tbl_pages',
 				'tbl_pages_types',
 				'tbl_sections',
-				'tbl_sections_association'			
-			);			
+				'tbl_sections_association',
+				'tbl_members_login_tokens',
+				'tbl_members_roles',
+				'tbl_members_roles_event_permissions',
+				'tbl_members_roles_page_permissions'
+			);
 			
 			## Field data and entry data schemas needs to be apart of the workspace sql dump
 			$sql_data  = $dump->export('tbl_fields_%', MySQLDump::ALL);

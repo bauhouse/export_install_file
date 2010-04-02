@@ -1,8 +1,8 @@
-# Export Install File
+# Export Members Install File
 
-- Version: 1.1
+- Version: 1.2
 - Author: Stephen Bau (stephen@domain7.com)
-- Build Date: 10 Jul 2009
+- Build Date: 2 April 2010
 - Requirements: Symphony 2.0.4, ZIP enabled (--enable-zip)
 
 This is a modified version of Alistair Kearney's Export Ensemble. The intention of this extension is to provide 

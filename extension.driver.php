@@ -3,9 +3,9 @@
 	Class extension_export_install_file extends Extension{
 
 		public function about(){
-			return array('name' => 'Export Install File',
-						 'version' => '1.1',
-						 'release-date' => '2009-07-10',
+			return array('name' => 'Export Members Install File',
+						 'version' => '1.2',
+						 'release-date' => '2010-04-02',
 						 'author' => array('name' => 'Stephen Bau',
 										   'website' => 'http://www.domain7.com/',
 										   'email' => 'stephen@domain7.com')
@@ -66,7 +66,9 @@
 				'tbl_pages_types',
 				'tbl_sections',
 				'tbl_sections_association',
-				'tbl_members_login_tokens',
+				'tbl_members_codes',
+				'tbl_members_email_templates',
+				'tbl_members_email_templates_role_mapping',
 				'tbl_members_roles',
 				'tbl_members_roles_event_permissions',
 				'tbl_members_roles_page_permissions'
@@ -87,7 +89,9 @@
 				'tbl_pages_types',
 				'tbl_sections',
 				'tbl_sections_association',
-				'tbl_members_login_tokens',
+				'tbl_members_codes',
+				'tbl_members_email_templates',
+				'tbl_members_email_templates_role_mapping',
 				'tbl_members_roles',
 				'tbl_members_roles_event_permissions',
 				'tbl_members_roles_page_permissions'
